@@ -19,7 +19,7 @@ To run the tests:
 
 ## A note about performance
 
-I have intentionally disregarded any concerns about performance in favourof writing code that I think is easier to reason about and reuse.
+I have intentionally disregarded any concerns about performance in favour of writing code that I think is easier to reason about and reuse.
 
 I strongly believe that the root of all evil in software development is premature optimization. If performance became a concern I would use tools to determine which functions were hogging memory or cpu cycles (almost definitely `filterData`) and then optimise those functions.
 
@@ -28,10 +28,10 @@ Note that while some of the functions I've written may be slow, all of them are 
 
 ## Code smell
 
-If a manager had given me this assignment with the intention to use my solution in production code I would have raised an eyebrow and then explained my concerns.
+If a manager had given me this assignment with the intention to use my solution in production code I would have raised an eyebrow and then explained some concerns:
 
-- Why should `options` be an optional argument? It seems like this function doesn't do anything useful unless it is provided. I think it would be more appropriate to throw if the function is called with only a single argument.
-- Why are we packing so much functionality into a single function? Many of the things this function does would surely be useful on their own. I think that this functionality sould be exposed as a module with the following methods.
+- Why should `options` be an optional argument? It seems like this function doesn't do anything useful unless it is provided. I think it would be more appropriate to throw an error if the function is called with only a single argument.
+- Why are we packing so much functionality into a single method? Many of the things this method does would surely be useful on their own. I think that this functionality sould be exposed as a module with the following methods.
   - `filterById(id, dataSet)`
   - `filterByAuto(auto, dataSet)`
   - `filterByMinPlayTime(playTime, dataSet)`
