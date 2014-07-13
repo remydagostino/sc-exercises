@@ -2,7 +2,7 @@
 
 Animating between two almost completely different screens is always tricky.
 
-The first tempation is always to just do a crossfade because it is so easy. I wanted to use movement rather than a crossfade because it affords no concept of precedence in the UI.
+The first tempation is always to just do a crossfade because it is so easy. I wanted to use movement instead because I was concerned that a crossfade affords no concept of precedence in the UI.
 
 Primarily I wanted the animation to capture the relationships between the layers of the interface. I decided what these layers were and then tried to create some phrases to describe out they move.
 
@@ -21,7 +21,7 @@ The font "Interstate Light" was provided but I couldn't see where it was used in
 
 ## Outcomes
 
-Building complex 'coreographed' animations in plan CSS can be really painful.I would usually use a javascript animation library or a css preprocessor to take some of the repetition out of the task. In any case I opted to do the entire thing using CSS keyframes using a single class on the root element to control the animation. I also avoided using explicit delays in the animations because I think it is easier to reason about the all the different keyframe animations when they are all exactly the same length.
+Building complex 'coreographed' animations in plan CSS can be really painful. I would usually use a javascript animation library or a css preprocessor to take some of the repetition out of the task. In any case I opted to do the entire thing using CSS keyframes using a single class on the root element to control the animation. I also avoided using explicit delays in the animations because I think it is easier to reason about the all the different keyframe animations when they are all exactly the same length.
 
 I had this idea that I could just slide the cover up and out while moving the artist name to the top-left of the screen but it didn't turn out quite how I imagined. The artist location "Lancaster, Britain UK" looked like it was racing against the artist name and it wasn't clear that they were on separate layers. I tried adding a small 3d rotation to the cover as it moved up and I think that may have fixed the problem.
 
