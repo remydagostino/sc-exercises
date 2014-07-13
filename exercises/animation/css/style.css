@@ -1,0 +1,509 @@
+/*------------------------
+  Include Fonts
+------------------------*/
+
+@font-face {
+  font-family: Interstate;
+  src: url(../assets/Interstate-Regular.woff);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Interstate;
+  src: url(../assets/Interstate-Light.woff);
+  font-weight: 300;
+}
+
+
+/*------------------------
+  Browser Resets
+------------------------*/
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+
+/*------------------------
+  Typography
+------------------------*/
+.t-title,
+.t-subtitle,
+.t-tiny,
+.t-text {
+  font-family: Interstate, serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.t-title,
+.t-subtitle {
+  margin: 0;
+  padding: 0;
+}
+
+.t-title {
+  font-size: 28px;
+}
+
+.t-subtitle {
+  font-size: 20px;
+}
+
+.t-tiny {
+  font-size: 11px;
+}
+
+
+/*------------------------
+  Utility
+------------------------*/
+.u-highContrast,
+.u-highContrast--light {
+  padding: 0.08em 0.35em;
+  background-color: #080807;
+}
+
+.u-highContrast {
+  color: #fff
+}
+
+.u-highContrast--light {
+  color: #ccc;
+}
+
+/*------------------------
+  Embed
+------------------------*/
+.sc-Embed {
+  height: 100%;
+  width: 100%;
+  max-height: 500px;
+  max-width: 500px;
+  position: relative;
+  overflow: hidden;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.sc-Embed-cover,
+.sc-Embed-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-background-size: cover cover;
+          background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sc-Embed-player {
+  background-image: url(../assets/artwork.jpg);
+  -webkit-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+          transform: scale(0.8);
+  opacity: 0;
+}
+
+.sc-Embed-cover {
+  background-image: url(../assets/avatar.jpg);
+  -webkit-box-shadow: 0px 6px 12px 0px rgba(50, 50, 50, 0.75);
+          box-shadow: 0px 6px 12px 0px rgba(50, 50, 50, 0.75);
+  -webkit-transform-origin: top center;
+      -ms-transform-origin: top center;
+          transform-origin: top center;
+}
+
+.sc-Embed-title {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  -webkit-transform: translateY(calc(100% - 100px));
+      -ms-transform: translateY(calc(100% - 100px));
+          transform: translateY(calc(100% - 100px));
+}
+
+.sc-Embed-title-text {
+  display: inline-block;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+}
+
+.sc-Embed-cover-title {
+  float: left;
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+}
+
+
+/* Animation TO */
+.sc-Embed.is-toPlay > .sc-Embed-title {
+  -webkit-animation: title-to-top 0.8s ease-in-out;
+          animation: title-to-top 0.8s ease-in-out;
+}
+
+.sc-Embed.is-fromPlay > .sc-Embed-title {
+  -webkit-animation: title-to-top 0.8s ease-in-out reverse;
+          animation: title-to-top 0.8s ease-in-out reverse;
+}
+
+@-webkit-keyframes title-to-top {
+  0% {
+    -webkit-transform: translateY(calc(100% - 100px));
+            transform: translateY(calc(100% - 100px));
+  }
+  70%, 100% {
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
+}
+
+@keyframes title-to-top {
+  0% {
+    -webkit-transform: translateY(calc(100% - 100px));
+            transform: translateY(calc(100% - 100px));
+  }
+  70%, 100% {
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
+}
+
+.sc-Embed.is-toPlay > .sc-Embed-title > .sc-Embed-title-text {
+  -webkit-animation: title-to-small ease-in-out 0.8s;
+          animation: title-to-small ease-in-out 0.8s;
+}
+
+.sc-Embed.is-fromPlay > .sc-Embed-title > .sc-Embed-title-text {
+  -webkit-animation: title-to-small ease-in-out 0.8s reverse;
+          animation: title-to-small ease-in-out 0.8s reverse;
+}
+
+@-webkit-keyframes title-to-small {
+  0%    {
+    color: #fff;
+    font-size: 28px;
+  }
+  70%, 100% {
+    color: #ccc;
+    font-size: 20px;
+  }
+}
+
+@keyframes title-to-small {
+  0%    {
+    color: #fff;
+    font-size: 28px;
+  }
+  70%, 100% {
+    color: #ccc;
+    font-size: 20px;
+  }
+}
+
+
+.sc-Embed.is-toPlay > .sc-Embed-cover {
+  -webkit-animation: cover-slide 0.8s ease-in-out;
+          animation: cover-slide 0.8s ease-in-out;
+}
+
+.sc-Embed.is-fromPlay > .sc-Embed-cover {
+  -webkit-animation: cover-slide 0.8s ease-in-out reverse;
+          animation: cover-slide 0.8s ease-in-out reverse;
+}
+
+
+@-webkit-keyframes cover-slide {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    visibility: visible;
+    opacity: 1;
+  }
+  20% {
+    -webkit-transform: translateY(0%) rotateX(-5deg);
+            transform: translateY(0%) rotateX(-5deg);
+  }
+  50%, 100%  {
+    -webkit-transform: translateY(-30%);
+            transform: translateY(-30%);
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+
+@keyframes cover-slide {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    visibility: visible;
+    opacity: 1;
+  }
+  20% {
+    -webkit-transform: translateY(0%) rotateX(-5deg);
+            transform: translateY(0%) rotateX(-5deg);
+  }
+  50%, 100%  {
+    -webkit-transform: translateY(-30%);
+            transform: translateY(-30%);
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.sc-Embed.is-toPlay > .sc-Embed-player {
+  -webkit-animation: player-grow 0.8s;
+          animation: player-grow 0.8s;
+}
+
+.sc-Embed.is-fromPlay > .sc-Embed-player {
+  -webkit-animation: player-grow 0.8s reverse;
+          animation: player-grow 0.8s reverse;
+}
+
+@-webkit-keyframes player-grow {
+  0% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    opacity: 0;
+  }
+  60%, 100%  {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes player-grow {
+  0% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    opacity: 0;
+  }
+  60%, 100%  {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Playing State */
+
+.sc-Embed.is-playing > .sc-Embed-cover {
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
+  visibility: hidden;
+}
+
+.sc-Embed.is-playing > .sc-Embed-player {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+
+.sc-Embed.is-playing > .sc-Embed-title {
+  -webkit-transform: translateY(30px);
+      -ms-transform: translateY(30px);
+          transform: translateY(30px);
+}
+.sc-Embed.is-playing > .sc-Embed-title > .sc-Embed-title-text {
+  color: #ccc;
+  font-size: 20px;
+}
+
+/*------------------------
+  Waveform
+------------------------*/
+.sc-Waveform {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 30px;
+  height: 80px;
+
+  /* Offscreen by default */
+  -webkit-transform: translateY(50px);
+      -ms-transform: translateY(50px);
+          transform: translateY(50px);
+  opacity: 0;
+
+  background-image: url(../assets/waveform.png);
+  background-postion: left bottom;
+  background-repeat: no-repeat;
+
+  /* Kind of silly, but the waveform is too big */
+  -webkit-background-size: auto auto;
+          background-size: auto;
+}
+
+.sc-Waveform-timer,
+.sc-Waveform-timer--start,
+.sc-Waveform-timer--end {
+  position: absolute;
+  bottom: 27px;
+  border-radius: 1px;
+}
+
+
+.sc-Waveform-timer--start {
+  left: 0;
+  color: #ff660e;
+}
+
+.sc-Waveform-timer--end {
+  right: 0;
+}
+
+/* Animation */
+
+.sc-Embed.is-toPlay > .sc-Embed-player > .sc-Waveform {
+  -webkit-animation: waveform-slide-up 0.8s ease-in-out;
+          animation: waveform-slide-up 0.8s ease-in-out;
+}
+.sc-Embed.is-fromPlay > .sc-Embed-player > .sc-Waveform {
+  -webkit-animation: waveform-slide-up 0.8s ease-in-out reverse;
+          animation: waveform-slide-up 0.8s ease-in-out reverse;
+}
+
+@-webkit-keyframes waveform-slide-up {
+  0%, 60% {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes waveform-slide-up {
+  0%, 60% {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* Playing State */
+.sc-Embed.is-playing > .sc-Embed-player > .sc-Waveform {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+
+/*------------------------
+  Current Track
+------------------------*/
+.sc-CurrentTrack {
+  position: absolute;
+  top: 63px;
+  left: 20px;
+}
+
+.sc-CurrentTrack-title {
+  display: block;
+  float: left;
+  -webkit-transform: translateX(50%);
+      -ms-transform: translateX(50%);
+          transform: translateX(50%);
+  opacity: 0;
+}
+
+/* Animation */
+.sc-Embed.is-toPlay > .sc-Embed-player > .sc-CurrentTrack > .sc-CurrentTrack-title {
+  -webkit-animation: track-slide-in 0.8s ease-in-out;
+          animation: track-slide-in 0.8s ease-in-out;
+}
+.sc-Embed.is-fromPlay > .sc-Embed-player > .sc-CurrentTrack > .sc-CurrentTrack-title {
+  -webkit-animation: track-slide-in 0.8s ease-in-out reverse;
+          animation: track-slide-in 0.8s ease-in-out reverse;
+}
+
+@-webkit-keyframes track-slide-in {
+  0%, 60% {
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes track-slide-in {
+  0%, 60% {
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+
+/* Playing State */
+
+.sc-Embed.is-playing > .sc-Embed-player > .sc-CurrentTrack > .sc-CurrentTrack-title {
+  -webkit-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+          transform: translateX(0%);
+  opacity: 1;
+}
+
+
+/*------------------------
+  Play Button
+------------------------*/
+.sc-PlayButton {
+  background-image: url(../assets/play.svg);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover cover;
+          background-size: cover;
+  background-color: transparent;
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  border: none;
+  outline: 0;
+  opacity: 1;
+
+  -webkit-transition: opacity 0.3s;
+
+          transition: opacity 0.3s;
+
+  /* Absolute center */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.sc-Embed.is-toPlay > .sc-PlayButton,
+.sc-Embed.is-playing > .sc-PlayButton {
+  opacity: 0;
+}
