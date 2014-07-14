@@ -4,7 +4,7 @@ Animating between two almost completely different screens is always tricky.
 
 The first tempation is always to just do a crossfade because it is so easy. I wanted to use movement instead because I was concerned that a crossfade affords no concept of precedence in the UI.
 
-Primarily I wanted the animation to capture the relationships between the layers of the interface. I decided what these layers were and then tried to create some phrases to describe out they move.
+Primarily I wanted the animation to capture the relationships between the layers of the interface. I decided what these layers were and then tried to create some phrases to describe how they move.
 
 - The cover: *move out of the way* to reveal the track
 - The track: *step into the forefront* when it is played
