@@ -1,3 +1,6 @@
 Please look for the SOLUTION.md file in each of the excercise folders.
 
-- Remy D'Agostino
+---
+
+Remy D'Agostino
+dagostino.remy@gmail.com
