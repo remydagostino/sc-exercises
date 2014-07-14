@@ -23,19 +23,19 @@ The font "Interstate Light" was provided but I couldn't see where it was used in
 
 ## Outcomes
 
-Building complex 'coreographed' animations in plain CSS can be really painful. I would usually use a javascript animation library or a css preprocessor to take some of the repetition out of the task. In any case I opted to do the entire thing using CSS keyframes using a single class on the root element to control the animation. I also avoided using explicit delays in the animations because I think it is easier to reason about the the different keyframe animations when they are all exactly the same length.
+Building complex 'choreographed' animations in plain CSS can be really painful. I would usually use a javascript animation library or a css preprocessor to take some of the repetition out of the task. In any case I opted to do the entire thing using CSS keyframes using a single class on the root element to control the animation. I also avoided using explicit delays in the animations because I think it is easier to reason about the the different keyframe animations when they are all exactly the same length.
 
 Some of the repetition in the styles could be avoided by using `animation-fill-mode` set to `forward`. Indeed, that is probably what I would use in production code where the animation only needed to flow foward. For this prototype I found it fun to play the animation forward and backward so I chose to implement the final state of the animation as a separate "finished animating" class instead.
 
 
 ### Browser Compatability
 
-The transition from the large text of the artist name in the cover mode to the small text of the 'play' mode is a bit janky in webkit browsers. It looks much nicer in Firefox though I'd assume that we wouldn't go live with an animation with a glitch that affected more than half our user base. Nevertheless, I really liked the idea though, so I've left in for the time being. Perhaps there is some neat webkit hack that I've forgotten about that could tidy up the text transition, otherwise I'd probably just use a different animation for that part.
+The transition from the large text of the artist name in the cover mode to the small text of the 'play' mode is a bit janky in webkit browsers. It looks much nicer in Firefox; though I'd assume that we wouldn't go live with an animation with a glitch that affected more than half our user base. Nevertheless, I really liked the idea so I've left it in for the time being. Perhaps there is some neat webkit hack that I've forgotten that could tidy up the text transition, otherwise I'd probably just use a different animation for that part.
 
 
 ## Notes
 
-- No back/pause/stop button existed in the designs. I just made it so that clicking in the middle of the player (where the button used to be) reverse the animation (for fun).
+- No back/pause/stop button existed in the designs. I just made it so that clicking in the middle of the player (where the button used to be) reverses the animation (for fun).
 - I ran my css through autoprefixer. There is a more consice webkit only version in `style-wk.css`.
 
 
