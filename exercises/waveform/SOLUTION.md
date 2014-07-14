@@ -10,7 +10,7 @@ The current implementation is completely stateless (how admirable) but the price
 
 ## Profiling the problem
 
-Chrome's debugger showed that the problem is almost entirely the javascript execution time. A quick look at the timeline showed that over 1400% more time is spent running calculations in 'Timer Fired' than is spent in 'paint' and 'composite layers'.
+Chrome's debugger showed that the problem was almost entirely the javascript execution time. A quick look at the timeline showed that over 1400% more time was spent running calculations in 'Timer Fired' than was spent in 'paint' and 'composite layers'.
 
 ## Solution
 
