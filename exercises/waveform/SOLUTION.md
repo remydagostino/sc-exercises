@@ -1,9 +1,9 @@
 ## Problems
 
-These problems are immediately evident.
+These problems were immediately evident.
 
-1. The canvas' width and height is being repeatedly evaluated inside the first for loop
-2. The entire canvas is redrawn every time the time updates, even if there would be no visual changes.
+1. The canvas' width and height is being repeatedly evaluated inside the first `for` loop
+2. The entire canvas is redrawn every time the sound updates, even if there would be no visual changes.
 3. Each bar is being rendered one pixel at a time
 
 The current implementation is completely stateless (how admirable) but the price for that simplicity is too high.
