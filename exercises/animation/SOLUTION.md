@@ -13,21 +13,29 @@ Primarily I wanted the animation to capture the relationships between the layers
 - The waveform: *take the stage*. This is the only part of the UI that keeps moving after the track begins, I felt like it should be separate.
 - The play button: *fade away*. The play button isn't important once it's pressed. It should just disappear.
 
+
 ## Concerns
 
 The UI for the playback screen doesn't show a pause or back button - I thought that was odd. One of the included assets was a pause button but I didn't know where it was supposed to go.
 
 The font "Interstate Light" was provided but I couldn't see where it was used in the interface. I tried measuring the text in the designs but it seemed like everything was just the regular weight.
 
+
 ## Outcomes
 
-Building complex 'coreographed' animations in plan CSS can be really painful. I would usually use a javascript animation library or a css preprocessor to take some of the repetition out of the task. In any case I opted to do the entire thing using CSS keyframes using a single class on the root element to control the animation. I also avoided using explicit delays in the animations because I think it is easier to reason about the all the different keyframe animations when they are all exactly the same length.
+Building complex 'coreographed' animations in plain CSS can be really painful. I would usually use a javascript animation library or a css preprocessor to take some of the repetition out of the task. In any case I opted to do the entire thing using CSS keyframes using a single class on the root element to control the animation. I also avoided using explicit delays in the animations because I think it is easier to reason about the the different keyframe animations when they are all exactly the same length.
 
-I had this idea that I could just slide the cover up and out while moving the artist name to the top-left of the screen but it didn't turn out quite how I imagined. The artist location "Lancaster, Britain UK" looked like it was racing against the artist name and it wasn't clear that they were on separate layers. I tried adding a small 3d rotation to the cover as it moved up and I think that may have fixed the problem.
+Some of the repetition in the styles could be avoided by using `animation-fill-mode` set to `forward`. Indeed, that is probably what I would use in production code where the animation only needed to flow foward. For this prototype I found it fun to play the animation forward and backward so I chose to implement the final state of the animation as a separate "finished animating" class instead.
+
+
+### Browser Compatability
+
+The transition from the large text of the artist name in the cover mode to the small text of the 'play' mode is a bit janky in webkit browsers. It looks much nicer in Firefox though I'd assume that we wouldn't go live with an animation with a glitch that affected more than half our user base. Nevertheless, I really liked the idea though, so I've left in for the time being. Perhaps there is some neat webkit hack that I've forgotten about that could tidy up the text transition, otherwise I'd probably just use a different animation for that part.
+
 
 ## Notes
 
-- No back/pause/stop button existed in the designs. I just made it so that clicking in the middle of the player (where the button used to be) reverses the animation.
+- No back/pause/stop button existed in the designs. I just made it so that clicking in the middle of the player (where the button used to be) reverse the animation (for fun).
 - I ran my css through autoprefixer. There is a more consice webkit only version in `style-wk.css`.
 
 

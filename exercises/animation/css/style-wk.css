@@ -185,11 +185,8 @@ html, body {
     visibility: visible;
     opacity: 1;
   }
-  20% {
-    -webkit-transform: translateY(0%) rotateX(-5deg);
-  }
   50%, 100%  {
-    -webkit-transform: translateY(-30%);
+    -webkit-transform: translateY(-40%);
     visibility: hidden;
     opacity: 0;
   }
@@ -204,7 +201,7 @@ html, body {
 }
 
 @-webkit-keyframes player-grow {
-  0% {
+  0%, 20% {
     -webkit-transform: scale(0.8);
     opacity: 0;
   }
