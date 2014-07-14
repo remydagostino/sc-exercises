@@ -36,6 +36,6 @@ The transition from the large text of the artist name in the cover mode to the s
 ## Notes
 
 - No back/pause/stop button existed in the designs. I just made it so that clicking in the middle of the player (where the button used to be) reverses the animation (for fun).
-- I ran my css through autoprefixer. There is a more consice webkit only version in `style-wk.css`.
+- I ran my css through autoprefixer. There is a more consice unprefixed version in `style-pre.css`.
 
 

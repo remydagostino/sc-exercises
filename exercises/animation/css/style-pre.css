@@ -84,7 +84,7 @@ html, body {
   max-width: 500px;
   position: relative;
   overflow: hidden;
-  -webkit-perspective: 1000px;
+  perspective: 1000px;
 }
 
 .sc-Embed-cover,
@@ -101,14 +101,14 @@ html, body {
 
 .sc-Embed-player {
   background-image: url(../assets/artwork.jpg);
-  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
   opacity: 0;
 }
 
 .sc-Embed-cover {
   background-image: url(../assets/avatar.jpg);
   box-shadow: 0px 6px 12px 0px rgba(50, 50, 50, 0.75);
-  -webkit-transform-origin: top center;
+  transform-origin: top center;
 }
 
 .sc-Embed-title {
@@ -116,12 +116,12 @@ html, body {
   left: 20px;
   top: 0;
   bottom: 0;
-  -webkit-transform: translateY(calc(100% - 100px));
+  transform: translateY(calc(100% - 100px));
 }
 
 .sc-Embed-title-text {
   display: inline-block;
-  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .sc-Embed-cover-title {
@@ -134,31 +134,31 @@ html, body {
 
 /* Animation TO */
 .sc-Embed.is-toPlay > .sc-Embed-title {
-  -webkit-animation: title-to-top 0.8s ease-in-out;
+  animation: title-to-top 0.8s ease-in-out;
 }
 
 .sc-Embed.is-fromPlay > .sc-Embed-title {
-  -webkit-animation: title-to-top 0.8s ease-in-out reverse;
+  animation: title-to-top 0.8s ease-in-out reverse;
 }
 
-@-webkit-keyframes title-to-top {
+@keyframes title-to-top {
   0% {
-    -webkit-transform: translateY(calc(100% - 100px));
+    transform: translateY(calc(100% - 100px));
   }
   70%, 100% {
-    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
   }
 }
 
 .sc-Embed.is-toPlay > .sc-Embed-title > .sc-Embed-title-text {
-  -webkit-animation: title-to-small ease-in-out 0.8s;
+  animation: title-to-small ease-in-out 0.8s;
 }
 
 .sc-Embed.is-fromPlay > .sc-Embed-title > .sc-Embed-title-text {
-  -webkit-animation: title-to-small ease-in-out 0.8s reverse;
+  animation: title-to-small ease-in-out 0.8s reverse;
 }
 
-@-webkit-keyframes title-to-small {
+@keyframes title-to-small {
   0%    {
     color: #fff;
     font-size: 28px;
@@ -171,42 +171,42 @@ html, body {
 
 
 .sc-Embed.is-toPlay > .sc-Embed-cover {
-  -webkit-animation: cover-slide 0.8s ease-in-out;
+  animation: cover-slide 0.8s ease-in-out;
 }
 
 .sc-Embed.is-fromPlay > .sc-Embed-cover {
-  -webkit-animation: cover-slide 0.8s ease-in-out reverse;
+  animation: cover-slide 0.8s ease-in-out reverse;
 }
 
 
-@-webkit-keyframes cover-slide {
+@keyframes cover-slide {
   0% {
-    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
     visibility: visible;
     opacity: 1;
   }
   50%, 100%  {
-    -webkit-transform: translateY(-40%);
+    transform: translateY(-40%);
     visibility: hidden;
     opacity: 0;
   }
 }
 
 .sc-Embed.is-toPlay > .sc-Embed-player {
-  -webkit-animation: player-grow 0.8s;
+  animation: player-grow 0.8s;
 }
 
 .sc-Embed.is-fromPlay > .sc-Embed-player {
-  -webkit-animation: player-grow 0.8s reverse;
+  animation: player-grow 0.8s reverse;
 }
 
-@-webkit-keyframes player-grow {
+@keyframes player-grow {
   0%, 20% {
-    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
     opacity: 0;
   }
   60%, 100%  {
-    -webkit-transform: scale(1);
+    transform: scale(1);
     opacity: 1;
   }
 }
@@ -214,17 +214,17 @@ html, body {
 /* Playing State */
 
 .sc-Embed.is-playing > .sc-Embed-cover {
-  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
   visibility: hidden;
 }
 
 .sc-Embed.is-playing > .sc-Embed-player {
-  -webkit-transform: scale(1);
+  transform: scale(1);
   opacity: 1;
 }
 
 .sc-Embed.is-playing > .sc-Embed-title {
-  -webkit-transform: translateY(30px);
+  transform: translateY(30px);
 }
 .sc-Embed.is-playing > .sc-Embed-title > .sc-Embed-title-text {
   color: #ccc;
@@ -242,7 +242,7 @@ html, body {
   height: 80px;
 
   /* Offscreen by default */
-  -webkit-transform: translateY(50px);
+  transform: translateY(50px);
   opacity: 0;
 
   background-image: url(../assets/waveform.png);
@@ -274,19 +274,19 @@ html, body {
 /* Animation */
 
 .sc-Embed.is-toPlay > .sc-Embed-player > .sc-Waveform {
-  -webkit-animation: waveform-slide-up 0.8s ease-in-out;
+  animation: waveform-slide-up 0.8s ease-in-out;
 }
 .sc-Embed.is-fromPlay > .sc-Embed-player > .sc-Waveform {
-  -webkit-animation: waveform-slide-up 0.8s ease-in-out reverse;
+  animation: waveform-slide-up 0.8s ease-in-out reverse;
 }
 
-@-webkit-keyframes waveform-slide-up {
+@keyframes waveform-slide-up {
   0%, 60% {
-    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
     opacity: 1;
   }
 }
@@ -294,7 +294,7 @@ html, body {
 /* Playing State */
 .sc-Embed.is-playing > .sc-Embed-player > .sc-Waveform {
   opacity: 1;
-  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
 }
 
 
@@ -310,25 +310,25 @@ html, body {
 .sc-CurrentTrack-title {
   display: block;
   float: left;
-  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
   opacity: 0;
 }
 
 /* Animation */
 .sc-Embed.is-toPlay > .sc-Embed-player > .sc-CurrentTrack > .sc-CurrentTrack-title {
-  -webkit-animation: track-slide-in 0.8s ease-in-out;
+  animation: track-slide-in 0.8s ease-in-out;
 }
 .sc-Embed.is-fromPlay > .sc-Embed-player > .sc-CurrentTrack > .sc-CurrentTrack-title {
-  -webkit-animation: track-slide-in 0.8s ease-in-out reverse;
+  animation: track-slide-in 0.8s ease-in-out reverse;
 }
 
-@-webkit-keyframes track-slide-in {
+@keyframes track-slide-in {
   0%, 60% {
-    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
     opacity: 1;
   }
 }
@@ -337,7 +337,7 @@ html, body {
 /* Playing State */
 
 .sc-Embed.is-playing > .sc-Embed-player > .sc-CurrentTrack > .sc-CurrentTrack-title {
-  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
   opacity: 1;
 }
 
@@ -357,7 +357,7 @@ html, body {
   outline: 0;
   opacity: 1;
 
-  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 
   /* Absolute center */
   position: absolute;
